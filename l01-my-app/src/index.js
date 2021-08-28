@@ -1,7 +1,9 @@
-import React, { Component, Fragment, PureComponent } from "react";
+// import React, { Component, Fragment, PureComponent } from "react";
+import React, { Fragment } from "react";
 import "antd/dist/antd.css";
-import ReactDOM from "react-dom";
 import "./index.css";
+import reactDom from "react-dom";
+import App from "./App";
 
 // const myElement1 = <div><h2>Локальное время { new Date().toLocaleTimeString() }</h2></div>;
 // const MyComponent1 = () => myElement1;
@@ -87,4 +89,21 @@ import "./index.css";
 
 
 //----------------------------------task 3
+const lastName="Zainashev";
+const obj = {
+  lastName,
+  name: 'Eldar',
+  age: 32};
 
+const element=<header>Наше приложение</header>
+
+reactDom.render(
+  <Fragment>   
+    <App>{element}</App>
+    <App>value</App>
+    <App children="value" />
+    <App/>
+ <App a={1} b={true} c={false} d e={"text"} f="Hello" g={{}}  obj1={obj} obj2={obj} />
+    </Fragment>,
+  document.getElementById('root')
+)
